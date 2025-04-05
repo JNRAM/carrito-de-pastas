@@ -1,0 +1,132 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px;
+    background-color: #ec9ab4; /* color de fondo */
+    color: #333;
+  }
+  
+  h1, h2 {
+    color: #121312; /* color de titulo y carrito */
+  }
+  
+  /* Contenedor de productos */
+  #productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* más separación entre productos */
+    justify-content: center;
+  }
+  
+  /* Contenedor del carrito */
+  #carrito {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Caja de producto */
+  .producto {
+    background-color: #fad2f2; /* fondo de cada pasta */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 100%;
+    max-width: 220px; /* más angosto */
+    transition: transform 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  /* Caja del ítem del carrito */
+  .carrito-item {
+    background-color: #fad2f2; /* fondo de cada pasta */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 100%;
+    transition: transform 0.2s ease;
+    box-sizing: border-box;
+  }
+  
+  .producto:hover, .carrito-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Imagen de producto */
+  .imagen-producto {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Botones */
+  button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Botón Agregar */
+  .producto button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .producto button:hover {
+    background-color: #218838;
+  }
+  
+  /* Botón Eliminar */
+  .carrito-item button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .carrito-item button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Botón Comprar */
+  .boton-comprar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .boton-comprar:hover {
+    background-color: #0069d9;
+  }
+  
+  /* Footer opcional */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    #productos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #productos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
