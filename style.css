@@ -1,132 +1,337 @@
 /* Estilo general */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    padding: 30px;
-    background-color: #ec9ab4; /* color de fondo */
-    color: #333;
-  }
-  
-  h1, h2 {
-    color: #121312; /* color de titulo y carrito */
-  }
-  
-  /* Contenedor de productos */
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  background-color: #1a1a1a; /* Fondo negro casi */
+  color: #f0f0f0; /* Texto gris claro */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #222; /* Fondo del header más oscuro */
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #ffd700; /* Línea dorada inferior */
+}
+
+h1, h2 {
+  color: #ffd700; /* Textos dorados */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+/* Banner */
+.banner {
+  background-color: #333; /* Fondo oscuro para el banner */
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.banner img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Navegación */
+nav {
+  background-color: #333;
+  border-radius: 5px;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centramos los elementos */
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+nav li {
+  color: #f0f0f0;
+  padding: 10px 15px; /* Reduje el padding */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-size: 1em; /* Aumenté el tamaño de la fuente de la navegación */
+}
+
+nav li:hover {
+  background-color: #555;
+}
+
+/* Estilos para el botón del carrito */
+.carrito-button {
+  margin-left: 10px; /* Espacio a la izquierda del botón */
+}
+
+.carrito-button i {
+  font-size: 1.1em;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Contenedor de productos */
+#productos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr)); /* Ajusté el ancho mínimo */
+  gap: 10px; /* Ajusté el espacio */
+  margin-top: 10px; /* Ajusté el margen */
+  justify-content: center;
+}
+
+/* Caja de producto */
+.producto {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 8px; /* Ajusté el padding */
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Centrar elementos horizontalmente */
+  font-size: 1em; /* Tamaño de la letra general del producto */
+  text-align: center; /* Centrar texto */
+}
+
+.producto h3 {
+  font-size: 1.1em; /* Título más grande */
+  margin-bottom: 3px;
+}
+
+.producto p {
+  margin-bottom: 2px;
+  font-size: 0.9em; /* Tamaño de la letra de la descripción */
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+/* Contenedor de la imagen del producto */
+.imagen-producto-contenedor {
+  width: 100%;
+  height: 90px; /* Ajusté la altura fija del contenedor de la imagen */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  margin-bottom: 3px; /* Ajusté el margen inferior */
+}
+
+/* Imagen de producto */
+.imagen-producto {
+  width: 80%; /* La imagen ocupa un porcentaje del ancho del contenedor */
+  max-height: 80%; /* Limitamos la altura para que quepa en el contenedor */
+  object-fit: contain; /* La imagen se escala manteniendo su relación de aspecto */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones */
+button {
+  border: none;
+  padding: 5px 8px; /* Ajusté el padding */
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em; /* Tamaño de la letra del botón */
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Agregar */
+.producto button {
+  background-color: #ffd700;
+  color: #222;
+  margin-top: 3px;
+}
+
+.producto button:hover {
+  background-color: #e6be00;
+}
+
+/* Contenedor del carrito */
+#carritoSeccion {
+  max-width: 450px; /* Ligeramente más ancho */
+  margin: 20px auto;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px; /* Aumenté el padding */
+  font-size: 0.9em; /* Aumenté el tamaño de la fuente */
+}
+
+#carrito h2 {
+  font-size: 1.1em; /* Título más grande */
+  margin-bottom: 12px;
+}
+
+#carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Aumenté el espacio */
+  margin-bottom: 12px; /* Aumenté el margen */
+}
+
+/* Caja del ítem del carrito */
+.carrito-item {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 12px; /* Aumenté el padding */
+  display: flex;
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.carrito-item h4 {
+  margin: 0;
+  color: #f0f0f0;
+  font-size: 1em; /* Aumenté el tamaño de la fuente */
+  max-width: 40%; /* Para que el nombre no ocupe todo */
+}
+
+.carrito-item-descripcion {
+  color: #aaa;
+  font-size: 0.8em;
+  display: none; /* Ocultar descripción para hacerlo más chico */
+}
+
+.carrito-item-details {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Aumenté el espacio */
+}
+
+.carrito-item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-item-quantity button {
+  background-color: #555;
+  color: #f0f0f0;
+  padding: 6px 10px; /* Aumenté el padding */
+  font-size: 0.8em;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.carrito-item-quantity span {
+  font-size: 0.9em; /* Aumenté el tamaño de la fuente */
+  color: #f0f0f0;
+}
+
+.carrito-item-precio {
+  color: #ffd700;
+  font-size: 1em; /* Aumenté el tamaño de la fuente */
+  font-weight: bold;
+  width: 50px; /* Ancho fijo para el precio */
+  text-align: right;
+}
+
+.carrito-item-eliminar {
+  background-color: transparent; /* Fondo transparente */
+  color: #d9534f; /* Rojo oscuro */
+  font-size: 0.9em;
+  padding: 5px 0; /* Ajusté el padding */
+  border: none; /* Sin borde */
+  cursor: pointer;
+}
+
+.carrito-item-eliminar i {
+  display: none; /* Ocultar el icono si lo hubiera */
+}
+
+/* Botón Comprar */
+.boton-comprar {
+  background-color: #28a745; /* Verde */
+  color: #f0f0f0;
+  padding: 12px 20px; /* Aumenté el padding */
+  border-radius: 8px;
+  font-size: 1em; /* Aumenté el tamaño de la fuente */
+  margin-top: 15px;
+  align-self: flex-end;
+}
+
+.boton-comprar:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el total del carrito (general) */
+.total-carrito {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #222;
+  border-top: 1px solid #444;
+  text-align: right;
+  font-size: 1em; /* Aumenté el tamaño de la fuente */
+  color: #ffd700;
+  border-radius: 5px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto informativo de pago en efectivo */
+.pago-efectivo {
+  color: #aaa;
+  font-size: 0.85em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Secciones "Quiénes Somos" y "Contacto" - Estilos restaurados */
+#quienesSomos,
+#contacto {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #333;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-size: 1em; /* Aumenté el tamaño de la fuente */
+  color: #ffd700; /* Tonos dorados */
+}
+
+#quienesSomos h2,
+#contacto h2 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+/* Footer opcional */
+footer {
+  margin-top: 15px;
+  text-align: center;
+  color: #888;
+  font-size: 0.8em;
+  padding: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   #productos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px; /* más separación entre productos */
-    justify-content: center;
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
-  
-  /* Contenedor del carrito */
-  #carrito {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Caja de producto */
-  .producto {
-    background-color: #fad2f2; /* fondo de cada pasta */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    width: 100%;
-    max-width: 220px; /* más angosto */
-    transition: transform 0.2s ease;
-    box-sizing: border-box;
-  }
-  
-  /* Caja del ítem del carrito */
-  .carrito-item {
-    background-color: #fad2f2; /* fondo de cada pasta */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    width: 100%;
-    transition: transform 0.2s ease;
-    box-sizing: border-box;
-  }
-  
-  .producto:hover, .carrito-item:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Imagen de producto */
-  .imagen-producto {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Botones */
-  button {
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  /* Botón Agregar */
-  .producto button {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .producto button:hover {
-    background-color: #218838;
-  }
-  
-  /* Botón Eliminar */
-  .carrito-item button {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .carrito-item button:hover {
-    background-color: #c82333;
-  }
-  
-  /* Botón Comprar */
-  .boton-comprar {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .boton-comprar:hover {
-    background-color: #0069d9;
-  }
-  
-  /* Footer opcional */
-  footer {
-    margin-top: 40px;
-    text-align: center;
-    color: #888;
-    font-size: 14px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 900px) {
-    #productos {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    #productos {
+}
+
+@media (max-width: 480px) {
+  #productos {
       grid-template-columns: 1fr;
-    }
   }
-  
+}

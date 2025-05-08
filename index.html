@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Pastas con amor</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Pastas con amor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/tu_codigo_de_font_awesome.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-  <h1>Elegí nuestras pastas</h1>
-  <div id="productos"></div>
+    <header>
+        <h1>Pastas con amor</h1>
+        <div class="banner"></div>
+        <nav>
+            <ul>
+                <li onclick="mostrarSeccion('catalogo')">CATÁLOGO</li>
+                <li onclick="mostrarSeccion('contacto')">CONTACTO</li>
+                <li onclick="mostrarSeccion('quienesSomos')">QUIÉNES SOMOS</li>
+                <li class="carrito-button" onclick="mostrarSeccion('carritoSeccion')">CARRITO <i class="fas fa-shopping-cart"></i></li>
+            </ul>
+        </nav>
+    </header>
 
-  <h2>Carrito</h2>
-  <div id="carrito"></div>
+    <main>
+        <section id="catalogo">
+            <h2>Nuestro Catálogo de Pastas</h2>
+            <div id="productos"></div>
+        </section>
 
-  <script src="main.js"></script>
+        <section id="carritoSeccion">
+            <h2>Carrito de Compras</h2>
+            <div id="carrito"></div>
+            <div id="total"></div>
+            <p class="pago-efectivo">El pago se realizará en efectivo al recibir su pedido.</p>
+        </section>
+
+        <section id="quienesSomos">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una empresa familiar dedicada a la elaboración de pastas frescas con ingredientes de la mejor calidad y mucho amor.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p><strong>Tel:</strong> 1158002948</p>
+            <p><strong>Email:</strong> ramirez.jesica2016@gmail.com</p>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
